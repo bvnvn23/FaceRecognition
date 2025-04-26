@@ -3,17 +3,50 @@
         xmlns:vm="using:FaceRecognition.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450" CanResize="False"
         x:Class="FaceRecognition.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="FaceRecognition"
-        >
+        Title="FaceRecognition">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
+
+    <StackPanel>
+        <Border Margin="5">
+            <TextBlock Margin="0, 50, 0, 0"
+                       FontSize="24" 
+                       HorizontalAlignment="Center"
+                       Text="Face Recognition App">
+            </TextBlock>
+        </Border>
+
+        <StackPanel Margin="0,50,0,0"
+                    HorizontalAlignment="Center"
+                    Spacing="10">
+            <Button Name="ComparePhotosButton"
+                    Content="Compare Photos" Width="200" Height="40"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"/>
+            <Button Name="AddPhotoButton" Command="{Binding AddPhotoCommand}"
+                    Content="Add Photo" Width="200" Height="40"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"/>
+            <Button Name="DeletePhotoButton"
+                    Content="Delete Photo" Width="200" Height="40"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"/>
+            <Button Name="ViewDatabaseButton"
+                    Content="View Photo Database" Width="200" Height="40"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"/>
+            <Button Name="ExitButton" Command="{Binding ExitCommand}"
+                    Content="Exit" Width="200" Height="40"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"/>
+        </StackPanel>
+
+    </StackPanel>
 
 </Window>

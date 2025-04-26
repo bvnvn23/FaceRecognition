@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:FaceRecognition.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="FaceRecognition.Views.AddPhotoWindow"
+        x:DataType="vm:AddPhotoViewModel"
+        Title="AddPhotoWindow">
+    
+    <StackPanel>
+        <Border BorderThickness="2"
+                BorderBrush="White"
+                Width="300"
+                Height="300"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="20">
+            <Image Source="{Binding UploadedPhoto}" 
+                   Stretch="Uniform"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+        </Border>
+        
+        <TextBox Width="200" 
+                 HorizontalAlignment="Center"
+                 Margin="10"
+                 Text="{Binding Name, Mode=TwoWay}"
+                 Watermark="Name" />
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+            <Button Command="{Binding ReturnCommand}"  Width="100" Content="Return" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Command="{Binding BrowseFileCommand}" Width="100" Content="Browse Files" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Command="{Binding UploadPhotoCommand}" Width="100" Content="Upload" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        </StackPanel>
+    </StackPanel>
+    
+    
+</Window>

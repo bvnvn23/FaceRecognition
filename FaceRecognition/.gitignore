@@ -27,6 +27,7 @@ Thumbs.db
 
 ## Dotnet-specific
 project.lock.json
+appsettings.Development.json
 project.fragment.lock.json
 artifacts/
 
@@ -38,7 +39,9 @@ ScaffoldingReadMe.txt
 *.pdb
 *.mdb
 *.tmp
+*.sqlite
 
 ## Publish
 wwwroot/dist/
 publish/
+

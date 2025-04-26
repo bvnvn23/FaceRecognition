@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="FaceRecognition/App.axaml" value="FaceRecognition/FaceRecognition.csproj" />
+        <entry key="FaceRecognition/Views/AddPhotoWindow.axaml" value="FaceRecognition/FaceRecognition.csproj" />
+        <entry key="FaceRecognition/Views/MainWindow.axaml" value="FaceRecognition/FaceRecognition.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

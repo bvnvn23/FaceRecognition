@@ -17,7 +17,7 @@ namespace FaceRecognition.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Data = table.Column<byte[]>(type: "BLOB", nullable: false),
-                    Label = table.Column<string>(type: "TEXT", nullable: true)
+                    Name = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
