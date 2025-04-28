@@ -1,0 +1,66 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:FaceRecognition.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="FaceRecognition.Views.PhotoListWindow"
+        x:DataType="vm:PhotoListViewModel"
+        Title="PhotoListWindow">
+    <DockPanel LastChildFill="True">
+        <DataGrid Margin="20" IsReadOnly="True"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False"
+                  CanUserSortColumns="False"
+                  GridLinesVisibility="All"
+                  BorderThickness="1"
+                  BorderBrush="Gray"
+                  HorizontalScrollBarVisibility="Hidden"
+                  VerticalScrollBarVisibility="Auto"
+                  ColumnWidth="*"
+                  MaxHeight="300"
+                  DockPanel.Dock="Top"
+                  ItemsSource="{Binding People}"
+                  SelectedItem="{Binding SelectedPerson, Mode=TwoWay}">
+                    
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Id" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Id}" 
+                                       TextAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Name" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" 
+                                       TextWrapping="Wrap"
+                                       TextTrimming="CharacterEllipsis"
+                                       MaxWidth="90"
+                                       TextAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Photo" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border CornerRadius="10" ClipToBounds="True">
+                                <Image Source="{Binding Image}" Width="80" Height="80" Margin="5"/>
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" DockPanel.Dock="Bottom">
+            <Button Content="Return" Margin="5" Command = "{Binding ReturnCommand}"/>
+            <Button Content="Delete" Margin="5" Command = "{Binding DeleteCommand}"/>
+        </StackPanel>
+    </DockPanel>
+</Window>

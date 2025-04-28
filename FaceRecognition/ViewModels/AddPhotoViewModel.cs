@@ -50,7 +50,7 @@ public class AddPhotoViewModel : ViewModelBase
         
         UploadPhotoCommand = new RelayCommand(UploadPhoto);
         BrowseFileCommand = new AsyncRelayCommand(BrowseFile);
-        ReturnCommand = new RelayCommand(Return, () => true);
+        ReturnCommand = new RelayCommand(() => ReturnToMainMenuHelper.ReturnButton(_currentWindow), () => true);
     }
 
     private async void UploadPhoto()
@@ -61,7 +61,7 @@ public class AddPhotoViewModel : ViewModelBase
             _photoService.AddPhotoAsync(photo, Name);
             var box = MessageBoxManager.GetMessageBoxStandard("Success", "Photo uploaded successfully");
             await box.ShowAsync();
-             Return();
+             ReturnToMainMenuHelper.ReturnButton(_currentWindow);
         }
         else
         {
@@ -87,11 +87,5 @@ public class AddPhotoViewModel : ViewModelBase
                 }
             }
         }
-    }
-
-    private void Return()
-    {
-       ReturnToMainMenuHelper.ReturnToMainMenu();
-       _currentWindow.Close();
     }
 }

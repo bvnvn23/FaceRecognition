@@ -10,7 +10,6 @@ public partial class MainWindowViewModel : ViewModelBase
 {
     public ICommand ComparePhotoCommand { get; }
     public ICommand AddPhotoCommand { get; }
-    public ICommand DeletePhotoCommand { get; }
     public ICommand ViewDatabaseCommand { get; }
     public ICommand ExitCommand { get; }
 
@@ -18,7 +17,6 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         ComparePhotoCommand = new RelayCommand(ComparePhoto);
         AddPhotoCommand = new RelayCommand(AddPhoto);
-        DeletePhotoCommand = new RelayCommand(DeletePhoto);
         ViewDatabaseCommand = new RelayCommand(ViewDatabase);
         ExitCommand = new RelayCommand(Exit);
     }
@@ -33,15 +31,13 @@ public partial class MainWindowViewModel : ViewModelBase
         addPhotoWindow.Show();
         Exit();
     }
-
-    private void DeletePhoto()
-    {
-        //DeletePhotoView
-    }
+    
 
     private void ViewDatabase()
     {
-        //VewDatabaseView
+        var viewPhotoListWindow = new Views.PhotoListWindow();
+        viewPhotoListWindow.Show();
+        Exit();
     }
     private void Exit()
     {

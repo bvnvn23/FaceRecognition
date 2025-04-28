@@ -14,8 +14,5 @@ public class AppDbContext : DbContext
     {
         var databasePath = Path.Combine(AppContext.BaseDirectory, "images.db");
         optionsBuilder.UseSqlite($"Data Source={databasePath}");
-
-        Console.WriteLine("Baza danych podłączona pod ścieżkę:");
-        Console.WriteLine(databasePath);
     }
 }

@@ -1,4 +1,5 @@
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 
 namespace FaceRecognition.Helpers;
@@ -16,5 +17,11 @@ public class ReturnToMainMenuHelper
         }
 
         mainWindow.Show();
+    }
+    
+    public static void ReturnButton(Window _currentWindow)
+    {
+        ReturnToMainMenu();
+        _currentWindow.Close();
     }
 }

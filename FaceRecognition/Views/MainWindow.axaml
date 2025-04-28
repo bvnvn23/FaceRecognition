@@ -33,11 +33,7 @@
                     Content="Add Photo" Width="200" Height="40"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"/>
-            <Button Name="DeletePhotoButton"
-                    Content="Delete Photo" Width="200" Height="40"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"/>
-            <Button Name="ViewDatabaseButton"
+            <Button Name="ViewDatabaseButton" Command="{Binding ViewDatabaseCommand}"
                     Content="View Photo Database" Width="200" Height="40"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"/>
