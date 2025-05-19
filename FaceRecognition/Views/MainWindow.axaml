@@ -6,7 +6,6 @@
         mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450" CanResize="False"
         x:Class="FaceRecognition.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
         Title="FaceRecognition">
 
     <Design.DataContext>
@@ -25,7 +24,7 @@
         <StackPanel Margin="0,50,0,0"
                     HorizontalAlignment="Center"
                     Spacing="10">
-            <Button Name="ComparePhotosButton"
+            <Button Name="ComparePhotosButton" Command="{Binding ComparePhotoCommand}"
                     Content="Compare Photos" Width="200" Height="40"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"/>

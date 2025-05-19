@@ -1,0 +1,61 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:FaceRecognition.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="FaceRecognition.Views.ComparePhotosWindow"
+        x:DataType="viewModels:ComparePhotosViewModel"
+        Title="ComparePhotosWindow">
+    <StackPanel>
+        <Border Margin="5">
+            <TextBlock Margin="0, 50, 0, 0"
+                       FontSize="24" 
+                       HorizontalAlignment="Center"
+                       Text="Compare Photos">
+            </TextBlock>
+        </Border>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="40">
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="Uploaded Photo" FontWeight="Bold" Margin="0,10,0,5" HorizontalAlignment="Center"/>
+                <Border BorderThickness="2"
+                        BorderBrush="White"
+                        Width="100"
+                        Height="100"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Margin="20">
+                    <Image Source="{Binding UploadedPhoto}" 
+                           Stretch="Uniform"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="Matching Photo" FontWeight="Bold" Margin="0,10,0,5" HorizontalAlignment="Center"/>
+                <Border BorderThickness="2"
+                        BorderBrush="White"
+                        Width="100"
+                        Height="100"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Margin="20">
+                    <Image Source="{Binding BestMatchPhoto}" 
+                           Stretch="Uniform"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock Text="Choose picture you want to compare with database" FontSize="10" Margin="0,0,0,5" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,20,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                <Button Command="{Binding ReturnCommand}" Content="Return" Width="80"/>
+                <Button Command="{Binding BrowseFileCommand}" Content="Browse" Width="80"/>
+                <Button Command="{Binding ComparePhotosCommand}" Content="Compare" Width="80"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

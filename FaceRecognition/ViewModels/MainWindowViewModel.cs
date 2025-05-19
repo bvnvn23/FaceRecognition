@@ -23,7 +23,9 @@ public partial class MainWindowViewModel : ViewModelBase
 
     private void ComparePhoto()
     {
-        //ComparePhoto
+        var comparePhotoWindow = new Views.ComparePhotosWindow();
+        comparePhotoWindow.Show();
+        Exit();
     }
     private void AddPhoto()
     {

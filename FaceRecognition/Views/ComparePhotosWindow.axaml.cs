@@ -5,17 +5,17 @@ using Avalonia.Controls;
 
 namespace FaceRecognition.Views;
 
-public partial class AddPhotoWindow : Window
+public partial class ComparePhotosWindow : Window
 {
-    public AddPhotoWindow()
+    public ComparePhotosWindow()
     {
-        InitializeComponent();
-        DataContext = new AddPhotoViewModel(this, new PhotoService(new AppDbContext()));
+        DataContext = new ComparePhotosViewModel(this, new PhotoService(new AppDbContext()));
         
-        Width = 450;    
-        Height = 450;
+        InitializeComponent();
+        
+        Width = 450;
+        Height = 375;
         CanResize = false;
         SizeToContent = SizeToContent.Manual;
-
     }
 }
