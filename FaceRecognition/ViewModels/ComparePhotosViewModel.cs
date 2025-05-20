@@ -128,7 +128,7 @@ public class ComparePhotosViewModel : ViewModelBase
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error when porownywanie photos: {ex.Message}");
+            Console.WriteLine($"Error when comparing photos: {ex.Message}");
         }
     }
 

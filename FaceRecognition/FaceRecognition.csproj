@@ -10,8 +10,6 @@
 
     <ItemGroup>
         <AvaloniaResource Include="Assets\**" />
-        <Folder Include="OnnxModel\" />
-        <Folder Include="Strategies\" />
     </ItemGroup>
 
     <ItemGroup>
